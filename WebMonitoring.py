@@ -126,8 +126,8 @@ class WebMonitoring:
     def urlContentCheck(self,content):
         try:
             if(self.__response.status_code == 200):
-                if  not self.__response.text:
-                    if not content:
+                if self.__response.text:
+                    if content:
                         if str(content) in str(self.__response.text):
                             return 1
                         else:
